@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026世界杯 · 知识索引与日常对照</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #2d2d2d;
+      background: #f7f6f2;
+    }
+
+    /* ----- 深色头图 (hero) ----- */
+    .hero {
+      background: linear-gradient(145deg, #14212e 0%, #1e2f3f 100%);
+      color: #e8edf0;
+      padding: 3rem 1.5rem 2.8rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -30%;
+      left: -20%;
+      width: 70%;
+      height: 120%;
+      background: radial-gradient(circle at 30% 50%, rgba(255, 200, 70, 0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero .tagline {
+      font-size: 1rem;
+      font-weight: 300;
+      color: #c8d2dc;
+      max-width: 480px;
+      margin: 0.4rem auto 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero .tagline span {
+      display: inline-block;
+      background: rgba(255, 215, 100, 0.12);
+      padding: 0.1rem 0.7rem;
+      border-radius: 20px;
+      color: #f0dca0;
+    }
+
+    /* ----- 正文浅色区 ----- */
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2.2rem 1.5rem 3.5rem;
+    }
+
+    .intro {
+      font-size: 1.05rem;
+      color: #3d3d3d;
+      margin-bottom: 2rem;
+      border-left: 3px solid #b8860b;
+      padding-left: 1rem;
+      background: #fcfaf5;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .intro p {
+      margin-bottom: 0.6rem;
+    }
+
+    .intro p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 特点卡片 */
+    .feature-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin: 2rem 0 2.4rem;
+    }
+
+    .feature-item {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 1.2rem 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.2s, transform 0.15s;
+      border-left: 6px solid transparent;
+    }
+
+    .feature-item:hover {
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+      transform: translateY(-2px);
+    }
+
+    .feature-item:nth-child(1) { border-left-color: #4b6a8a; }
+    .feature-item:nth-child(2) { border-left-color: #7f8c8d; }
+    .feature-item:nth-child(3) { border-left-color: #b8860b; }
+    .feature-item:nth-child(4) { border-left-color: #607d8b; }
+
+    .feature-item h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1f2a36;
+      margin-bottom: 0.3rem;
+    }
+
+    .feature-item p {
+      font-size: 0.92rem;
+      color: #4a4a4a;
+      margin: 0;
+    }
+
+    /* 温和结尾 / 场景延伸 */
+    .closing {
+      background: #f8f6f0;
+      padding: 1.6rem 1.8rem;
+      border-radius: 20px;
+      margin: 2rem 0 1.4rem;
+      border: 1px solid #e9e3d8;
+    }
+
+    .closing p {
+      margin-bottom: 0.7rem;
+    }
+
+    .closing p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .faq-note {
+      font-size: 0.9rem;
+      color: #5e5e5e;
+      margin-top: 1.8rem;
+      padding: 1rem 1.2rem;
+      background: #ece9e2;
+      border-radius: 12px;
+    }
+
+    .faq-note strong {
+      color: #324455;
+    }
+
+    /* 强调色链接 */
+    a {
+      color: #b8860b;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted transparent;
+      transition: border-bottom 0.2s, color 0.2s;
+    }
+
+    a:hover {
+      color: #8b6508;
+      border-bottom: 1px dotted #8b6508;
+    }
+
+    /* 响应式 */
+    @media (min-width: 640px) {
+      .hero {
+        padding: 4rem 2.5rem 3.2rem;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+      }
+
+      .feature-item {
+        padding: 1.3rem 1.5rem;
+      }
+
+      .content {
+        padding: 2.6rem 2.5rem 4rem;
+      }
+    }
+
+    @media (min-width: 960px) {
+      .hero h1 {
+        font-size: 3.6rem;
+      }
+
+      .hero .tagline {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* 简单的分隔 */
+    hr {
+      border: none;
+      border-top: 1px solid #ddd8ce;
+      margin: 1.8rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 深色头图 -->
+  <section class="hero">
+    <h1>2026 · 世界杯</h1>
+    <div class="tagline">
+      <span>日常查询 · 对照 · 延伸阅读</span>
+    </div>
+  </section>
+
+  <!-- 正文浅色区 -->
+  <div class="content">
+
+    <!-- 开场短句 -->
+    <div class="intro">
+      <p>对许多人来说，世界杯不只是四年一次的赛事，更是翻阅赛程、核对球队历史、跨洲比较的持续兴趣。2026年世界杯将首次由三个国家联合主办，赛制与轮次也有显著变化——这些细节逐渐进入日常查询的语境。</p>
+      <p>从赛区名额分配到比赛城市分布，从过往纪录到新增球队，一个可供对照的知识框架，往往比即时新闻更耐读。</p>
+    </div>
+
+    <!-- 特点列表 (承接上文的知识线索) -->
+    <div class="feature-grid">
+      <div class="feature-item">
+        <h3>三东道主 · 跨洲际</h3>
+        <p>美国、加拿大、墨西哥联合承办，覆盖北美大陆东西海岸及中部时区。比赛场地分散在16座城市，气候与海拔差异显著，是历史上最分散的东道主布局。</p>
+      </div>
+      <div class="feature-item">
+        <h3>48 队 · 新分组逻辑</h3>
+        <p>决赛圈扩军至48支，分为12个小组，每组前两名以及成绩最好的8个小组第三晋级32强。这一轮次结构对传统强队和新晋球队都提出了不同的策略要求。</p>
+      </div>
+      <div class="feature-item">
+        <h3>亚洲 &amp; 非洲 名额增加</h3>
+        <p>亚洲区直接名额增至8.5个，非洲区增至9.5个。对于长期关注预选赛的球迷而言，这意味着更多跨洲附加赛和新兴势力的亮相机会。</p>
+      </div>
+      <div class="feature-item">
+        <h3>历史数据对照</h3>
+        <p>历届冠军、进球纪录、主办国成绩、首次参赛球队……这些常用于延伸阅读的数据维度，在2026周期前值得重新梳理，尤其面对全新的比赛系统和场地条件。</p>
+      </div>
+    </div>
+
+    <!-- 温和结尾 + 场景描述 -->
+    <div class="closing">
+      <p>如果你正在整理观赛计划，或者想了解某个球队在扩军后的出现概率，不妨把 <a href="https://zh-cnweb-worldcup.com">2026世界杯</a> 作为一个固定的参考地址。它提供赛事架构、城市指南、资格赛进程等基础索引，适合在对比不同来源时翻阅。</p>
+      <p>在信息过载的赛前阶段，一个结构清晰的对照页能帮助节省时间。无论是查小组构成还是核对比赛时间，都可以从这里开始。</p>
+    </div>
+
+    <!-- FAQ 摘要风格段落 (承接阅读延伸) -->
+    <div class="faq-note">
+      <strong>❖ 常见延伸问题</strong><br>
+      · 2026世界杯决赛周具体日期？—— 计划于2026年6月中旬至7月中旬举行。<br>
+      · 有哪些球队已通过预选赛晋级？—— 截至2025年初，部分东道主及各大洲名额尚未完全决出，可参考资格赛实时页面。<br>
+      · 场馆海拔对比赛影响大吗？—— 墨西哥城、瓜达拉哈拉等高原城市可能带来体能变量，是数据分析爱好者常关注的点。
+    </div>
+
+    <hr>
+    <p style="font-size: 0.85rem; color: #777; text-align: center;">
+      基于公开赛历与竞赛规程整理 · 修订于2025年
+    </p>
+  </div>
+
+</body>
+</html>
